@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>V2ray</title>
+      <link href="/2022/07/01/V2ray/"/>
+      <url>/2022/07/01/V2ray/</url>
+      
+        <content type="html"><![CDATA[<p>本教程为个人搭建V2ray翻墙节点的教程，耐心看完30分钟内就可以假设好！</p><p>首先准备VPS，这个自己网上找找有很多<br>个人推荐bwh81.net的洛杉矶VPS<br>线路为CN2 GIA速度很不错，晚高峰时段油管8K毫无压力，价格相比较其他日本、韩国、台湾、香港CN2线路的VPS便宜太多了，50刀1年<br>当然也可以用用普通线路的VPS，价格更便宜，不过普通线路嘛，一到晚高峰就生活无法自理！</p><p>需要工具：Xshell、v2rayN<br>链接: <a href="https://pan.baidu.com/s/1pihGR6ecFzmnqXIy3jMDJQ?pwd=9mm6">https://pan.baidu.com/s/1pihGR6ecFzmnqXIy3jMDJQ?pwd=9mm6</a> 提取码: 9mm6</p><p>首先购买VPS<br>然后使用Xshell连接VPS<br>点击文件-新建<br><img src="/2022/07/01/V2ray/Users\ZZW\AppData\Roaming\Typora\typora-user-images\image-20220701234414055.png" alt="image-20220701234414055"></p><p>输入账号和密码后连接VPS<br><img src="/2022/07/01/V2ray/Users\ZZW\AppData\Roaming\Typora\typora-user-images\image-20220701234429530.png" alt="image-20220701234429530"><br><img src="/2022/07/01/V2ray/Users\ZZW\AppData\Roaming\Typora\typora-user-images\image-20220701234444067.png" alt="image-20220701234444067"></p><p>然后输入一键安装v2ray脚本<br>bash &lt;(curl -s -L <a href="https://git.io/v2ray.sh">https://git.io/v2ray.sh</a>)<br>然后选择安装<br>我这里已经安装好了，端口都是自己定义，传输协议建议使用kcp，伪装类型建议使用dtls，这样不容易被墙<br><img src="/2022/07/01/V2ray/Users\ZZW\AppData\Roaming\Typora\typora-user-images\image-20220701234454666.png" alt="image-20220701234454666"></p><p>接下来就等就行了，安装完成后会v2ray的地址、端口之类的<br>地址 (Address) = xxxxxx</p><p>端口 (Port) = xxxxxx</p><p>用户ID (User ID / UUID) = xxxxxx</p><p>额外ID (Alter Id) = 0</p><p>传输协议 (Network) = xxxxxx</p><p>伪装类型 (header type) = xxxxxx</p><p>接下来安装tcp加速<br>输入 wget -N –no-check-certificate “<a href="https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh&quot;">https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh&quot;</a><br>安装完脚本后输入 chmod +x tcp.sh<br>然后输入 ./tcp.sh</p><p><img src="/2022/07/01/V2ray/Users\ZZW\AppData\Roaming\Typora\typora-user-images\image-20220701234507433.png" alt="image-20220701234507433"></p><p>个人建议使用bbrplus<br>输入数字2<br>等安装完成后重启vps，重启后再次输入 ./tcp.sh，输入数字7，使用bbrplus版加速。<br>这样就完成了v2ray机场的搭建</p><p>下面我们打开v2rayN<br>点击服务器-添加[VMess]服务器<br>只需要输入下图中的信息就可以链接了</p><p><img src="/2022/07/01/V2ray/Users\ZZW\AppData\Roaming\Typora\typora-user-images\image-20220701234519879.png" alt="image-20220701234519879"><br>链接模式个人建议使用PAC模式，在软件目录下有个叫pac.txt的文件，可以自己编辑需要代理的网站或IP，这样就不会影响访问国内网站</p><p>以上就是如何简单搭建v2ray机场的教程</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Prometheus+Grafana</title>
       <link href="/2022/06/11/Prometheus-Grafana/"/>
       <url>/2022/06/11/Prometheus-Grafana/</url>
