@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>sort</title>
+      <link href="/2022/10/09/sort/"/>
+      <url>/2022/10/09/sort/</url>
+      
+        <content type="html"><![CDATA[<h1 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h1><p>常见的排序算法分插入排序、选择排序、交换排序、归并排序</p><p>插入排序常见的有：直接插入排序、希尔排序</p><p>选择排序常见的有：选择排序、堆排序</p><p>交换排序常见的有：冒泡排序、快速排序</p><p>归并排序常见的有：归并排序</p><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>遍历数组，过程中不断地比较相邻两个元素的值，如果后者比前者的值小就交换它们的位置。(升序)</p><p>时间复杂度：O(n²)、<strong>稳定</strong>、效率不高</p><p>空间复杂度：O(1)</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//冒泡排序  升序   每次遍历将最大的数移动到右边</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bubbleSort</span><span class="params">(<span class="type">int</span> nums[])</span> &#123;</span><br><span class="line">    <span class="comment">// 总共要经过 N-1 轮比较  每次比较N-1-i轮</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; nums.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] &gt; nums[j + <span class="number">1</span>]) &#123;        <span class="comment">// (nums[j] &lt; nums[j + 1] 降序</span></span><br><span class="line">                <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> nums[j];</span><br><span class="line">                nums[j] = nums[j + <span class="number">1</span>];</span><br><span class="line">                nums[j + <span class="number">1</span>] = temp;</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;&#125;&#125;</span><br></pre></td></tr></table></figure><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>从待排序序列中任选一个元素（一般为中间值），将所有比它小的元素移动到它的左边，所有比 它大的元素移动到它的右边；重复执行。直至所有的子序列都不可再分（仅包含 1 个元素或者不包含任何元素），整个序列就变成了一个有序序列。</p><p>时间复杂度：O(n²) ，理想状态对应的时间复杂度为<code>O(nlogn)</code>。 <strong>不稳定</strong><br>空间复杂度：O(nlogn)    </p><h2 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h2><p>将待排序序列中的第一个元素看作是有序的子序列。从第二个元素开始，在不破坏子序列有序的前提下，将后续的每个元素插入到子序列中的适当位置。(从左到右排)</p><p>时间复杂度：O(n²) 、<strong>稳定</strong><br>空间复杂度：O (1)</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">insertSort</span><span class="params">(<span class="type">int</span> nums[])</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> nums[i];</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;</span><br><span class="line">        <span class="keyword">for</span> (; j &gt; <span class="number">0</span> &amp;&amp; nums[j - <span class="number">1</span>] &lt; temp; j--) &#123;   <span class="comment">//nums[j - 1] 》 temp</span></span><br><span class="line">            nums[j] = nums[j - <span class="number">1</span>];   &#125;</span><br><span class="line">        nums[j] = temp; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/2022/09/17/interview/"/>
       <url>/2022/09/17/interview/</url>
